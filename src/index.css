@@ -21,3 +21,55 @@ h1 {
 button {
   cursor: pointer;
 }
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  color: white;
+}
+
+.header {
+  display: flex;
+  padding: 25px;
+  gap: 25px;
+  align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0);
+}
+
+.page-title {
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.active {
+  border-bottom: 2px solid white;
+  margin-bottom: -2px;
+}
+
+.home-main {
+  background-image: url("./assets/5c709b56ce57f269e429.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 50px;
+  text-align: center;
+}
+
+.home-main-desc {
+  max-width: 750px;
+  margin: 25px auto 0px auto;
+  font-weight: normal;
+}
+
+.shop-button {
+  margin-top: 100px;
+  display: inline-block;
+  background-color: blue;
+  border-radius: 100px;
+  padding: 10px 25px;
+}
