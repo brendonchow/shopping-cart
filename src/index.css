@@ -92,3 +92,11 @@ a {
   top: -5px;
   right: -21px;
 }
+
+.error,
+.loading {
+  font-size: 48px;
+  text-align: center;
+  color: black;
+  margin-top: 100px;
+}
