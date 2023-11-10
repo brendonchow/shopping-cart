@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropType from "prop-types";
 
-const Navbar = ({ current }) => {
+const Navbar = ({ current, numberOfItems }) => {
   return (
     <header className="header">
       <Link
@@ -14,7 +14,12 @@ const Navbar = ({ current }) => {
         <h2>Shop</h2>
       </Link>
       <Link to="/cart" className={current === "cart" ? " active" : ""}>
-        <h2>Cart</h2>
+        <h2 className="cart-link">
+          Cart{" "}
+          {numberOfItems > 0 && (
+            <span className="cart-items-count">{numberOfItems}</span>
+          )}
+        </h2>
       </Link>
     </header>
   );
@@ -22,6 +27,7 @@ const Navbar = ({ current }) => {
 
 Navbar.propTypes = {
   current: PropType.string.isRequired,
+  numberOfItems: PropType.number.isRequired,
 };
 
 export default Navbar;

@@ -73,3 +73,22 @@ a {
   border-radius: 100px;
   padding: 10px 25px;
 }
+
+.cart-link {
+  position: relative;
+}
+
+.cart-items-count {
+  position: absolute;
+  background-color: green;
+  color: white;
+  width: 20px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border-radius: 50%;
+  top: -5px;
+  right: -21px;
+}

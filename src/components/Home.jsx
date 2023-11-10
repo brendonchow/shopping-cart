@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
+import PropTypes from "prop-types";
 
-function Home() {
+function Home({ children }) {
   return (
     <>
-      <Navbar current="home" />
+      {children}
       <main className="home-main">
         <h1>Welcome to my Shopping Cart!</h1>
         <h2 className="home-main-desc">
@@ -19,5 +19,9 @@ function Home() {
     </>
   );
 }
+
+Home.propTypes = {
+  children: PropTypes.object.isRequired,
+};
 
 export default Home;

@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
-const Shop = ({ children }) => {
+const Cart = ({ children }) => {
   return <>{children}</>;
 };
 
-Shop.propTypes = {
+Cart.propTypes = {
   children: PropTypes.object.isRequired,
 };
 
-export default Shop;
+export default Cart;
