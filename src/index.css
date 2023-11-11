@@ -222,9 +222,6 @@ a {
   border-radius: 1000px;
 }
 
-.cart-items {
-}
-
 .cart-item {
   background-color: white;
   padding: 25px;
@@ -258,7 +255,4 @@ a {
 .remove-cart-item {
   background-color: transparent;
   color: red;
-}
-
-.cart-item-title {
 }
