@@ -13,9 +13,18 @@ html {
   border: none;
 }
 
+:root {
+  --item-counter-button: rgb(150, 150, 150);
+  --background-color: rgb(225, 225, 225);
+}
+
 h1 {
   /* To override Normalize.css h1 margin */
   margin: 0;
+}
+
+body {
+  color: black;
 }
 
 button {
@@ -26,13 +35,12 @@ button {
   min-height: 100vh;
   display: grid;
   grid-template-rows: max-content 1fr;
-  color: white;
 }
 
 .header {
   display: flex;
-  padding: 25px;
-  gap: 25px;
+  padding: 25px calc(25px + 0.5vw);
+  gap: calc(10px + 0.1vw);
   align-items: center;
   color: white;
   background-color: rgba(0, 0, 0);
@@ -58,6 +66,7 @@ a {
   background-size: cover;
   padding: 50px;
   text-align: center;
+  color: white;
 }
 
 .home-main-desc {
@@ -99,4 +108,157 @@ a {
   text-align: center;
   color: black;
   margin-top: 100px;
+}
+
+.shop.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: space-evenly;
+  gap: 25px;
+  background-color: var(--background-color);
+  padding: 50px 0px 50px 0px;
+}
+
+.item-card {
+  background-color: white;
+  text-align: center;
+  padding: 50px 50px 25px 50px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  color: black;
+  grid-template-rows: repeat(5, max-content) 1fr;
+}
+
+.item-image {
+  max-width: 100%;
+  object-fit: contain;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.add-cart {
+  background-color: rgb(55, 163, 61);
+  padding: 10px 25px;
+  border-radius: 5px;
+  align-self: end;
+  height: 40px;
+}
+
+.item-amount {
+  display: flex;
+  align-self: end;
+  height: 40px;
+  font-size: 18px;
+}
+
+.item-increment {
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid var(--item-counter-button);
+}
+
+.item-decrement {
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid var(--item-counter-button);
+}
+
+.item-decrement,
+.item-increment {
+  width: 50px;
+  background-color: transparent;
+}
+
+.item-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  border: 1px solid var(--item-counter-button);
+}
+
+.empty-cart {
+  margin: auto;
+  font-size: 18px;
+}
+
+.cart-main-empty {
+  text-align: center;
+}
+
+.cart-main-not-empty {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(300px, auto) min(300px);
+  align-items: start;
+  gap: 25px;
+}
+
+.cart-main {
+  padding: 50px;
+  background-color: var(--background-color);
+}
+
+.checkout {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.checkout-button {
+  background-color: green;
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 20px;
+  padding: 10px 0px;
+  border-radius: 1000px;
+}
+
+.cart-items {
+}
+
+.cart-item {
+  background-color: white;
+  padding: 25px;
+  display: flex;
+  gap: 25px;
+  border-radius: 5px;
+  max-width: 750px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  gap: 25px;
+}
+
+.cart-item-info-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-image {
+  width: 100px;
+  object-fit: contain;
+}
+
+.remove-cart-item {
+  background-color: transparent;
+  color: red;
+}
+
+.cart-item-title {
 }

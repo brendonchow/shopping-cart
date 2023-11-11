@@ -8,15 +8,16 @@ import Navbar from "./components/Navbar.jsx";
 
 const App = () => {
   const params = useParams();
-  const [cartItems, setCartItems] = useState([]);
-  const [shopItems, setShopItems] = useState({});
+  const [cartItems, setCartItems] = useState({});
+  const [shopItems, setShopItems] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const cartItemsCount = Object.keys(cartItems).length;
 
   useEffect(() => {
     let ignore = false;
 
-    fetch("https://fakestoreapi.com/products?limit=5", {
+    fetch("https://fakestoreapi.com/products", {
       mode: "cors",
     })
       .then((res) => {
@@ -43,16 +44,22 @@ const App = () => {
   }, []);
 
   return params.page === "shop" ? (
-    <Shop error={error} loading={loading} items={shopItems}>
-      <Navbar current="shop" numberOfItems={cartItems.length} />
+    <Shop
+      error={error}
+      loading={loading}
+      items={shopItems}
+      cart={cartItems}
+      setCart={setCartItems}
+    >
+      <Navbar current="shop" numberOfItems={cartItemsCount} />
     </Shop>
   ) : params.page === "cart" ? (
-    <Cart>
-      <Navbar current="cart" numberOfItems={cartItems.length} />
+    <Cart cartItems={cartItems} setCart={setCartItems} items={shopItems}>
+      <Navbar current="cart" numberOfItems={cartItemsCount} />
     </Cart>
   ) : (
     <Home>
-      <Navbar current="home" numberOfItems={cartItems.length} />
+      <Navbar current="home" numberOfItems={cartItemsCount} />
     </Home>
   );
 };
